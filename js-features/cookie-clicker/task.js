@@ -1,11 +1,17 @@
 const cookie = document.getElementById("cookie");
 const clickerCounter = document.getElementById("clicker__counter");
 
-cookie.onclick = function() {
-    let clicks = clickerCounter.textContent++;
-    if (clicks % 2 == 0) {
-        cookie.width = 200;
-    } else {
-        cookie.width = 300;
-    }
-}
+cookie.addEventListener("mousedown", function() {
+    cookie.style.width = "150px";
+});
+
+cookie.addEventListener("mouseup", function() {
+    cookie.style.width = "200px";
+});
+
+cookie.addEventListener("click", function() {
+    clickerCounter.textContent++;
+});
+
+
+
