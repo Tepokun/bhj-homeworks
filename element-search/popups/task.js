@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.classList.remove('modal_active');
     }
   
-    for (var i = 0; i < modalCloseButtons.length; i++) {
-      modalCloseButtons[i].addEventListener('click', function() {
+    modalCloseButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
         hideModal(this.closest('.modal'));
       });
-    }
+    });
   
     showSuccessButton.addEventListener('click', function(event) {
       event.preventDefault();
@@ -33,10 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     makeGoodButton.addEventListener('click', function(event) {
       event.preventDefault();
       showModal(modalSuccess);
-      setTimeout(function() {
-        hideModal(modalMain);
-        hideModal(modalSuccess);
-      }, 3000);
     });
   });
   
