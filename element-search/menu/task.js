@@ -1,5 +1,3 @@
-'use strict';
-
 const links = document.querySelectorAll('.menu__link');
 
 links.forEach(function (link) {
