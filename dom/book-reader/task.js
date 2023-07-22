@@ -1,27 +1,17 @@
-const reader = document.querySelector('.book');
-const controls = document.querySelector('.book__control');
+const book = document.getElementById('book');
+const fontSizes = document.getElementsByClassName('font-size');
 
-for (let control of controls.children) {
-    control.addEventListener('click', change)
-}
-
-function change(event) {
+for (const size of fontSizes) {
+  size.addEventListener('click', function(event) {
     event.preventDefault();
-    if (event.target.dataset.size === 'big') {
-        reader.classList.add('book_fs-big');
-        reader.classList.remove('book_fs-small');
-    } else if (event.target.dataset.size === 'small') {
-        reader.classList.add('book_fs-small');
-        reader.classList.remove('book_fs-big');
-    } else {
-        reader.classList.remove('book_fs-small');
-        reader.classList.remove('book_fs-big');
-    }
-
-    for (let letter of document.querySelectorAll('.font-size')) {
-        letter.classList.remove('font-size_active');
-    }
-    event.target.classList.add('font-size_active');
+    const oldSize = document.querySelector('.font-size_active');
     
+    if (oldSize) {
+      oldSize.classList.remove('font-size_active');
+      book.classList.remove('book_fs-' + oldSize.dataset.size);
+    }
 
+    this.classList.add('font-size_active');
+    book.classList.add('book_fs-' + this.dataset.size);
+  });
 }
