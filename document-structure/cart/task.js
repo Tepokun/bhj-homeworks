@@ -15,22 +15,18 @@ function changeQuantity(element, increment) {
       const addButton = controls.querySelector('.product__add');
       const product = controls.closest('.product');
   
-      // Увеличение количества товара
       incButton.addEventListener('click', () => {
         changeQuantity(product, 1);
       });
   
-      // Уменьшение количества товара
       decButton.addEventListener('click', () => {
         changeQuantity(product, -1);
       });
   
-      // Добавление товара в корзину
       addButton.addEventListener('click', () => {
         const productId = product.dataset.id;
         const productImageSrc = product.querySelector('.product__image').src;
         const productQuantity = +product.querySelector('.product__quantity-value').textContent;
-  
         const cartProducts = document.querySelectorAll('.cart__product');
   
         for (const cartProduct of cartProducts) {
