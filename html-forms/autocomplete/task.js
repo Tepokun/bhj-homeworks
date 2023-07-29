@@ -53,12 +53,11 @@ class Autocomplete {
 
     this.renderMatches( matches );
   }
-
   renderMatches( matches ) {
     const html = matches.map( item => `
-    	<li>
+      <li>
         <span class="autocomplete__item"
-        	data-index="${item.index}"
+          data-index="${item.index}"
           data-id="${item.value}"
         >${item.text}</span>
       </li>
