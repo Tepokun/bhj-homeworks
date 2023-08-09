@@ -28,7 +28,7 @@ signinForm.addEventListener('submit', async (e) => {
             welcomeBlock.classList.add('welcome_active');
             signinDiv.classList.remove('signin_active');
         } else {
-            alert('You shell not pass');
+            alert('you shall not pass');
         }
     } catch (error) {
         console.error('Error:', error);
