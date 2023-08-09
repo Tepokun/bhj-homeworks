@@ -28,9 +28,9 @@ signinForm.addEventListener('submit', async (e) => {
             welcomeBlock.classList.add('welcome_active');
             signinDiv.classList.remove('signin_active');
         } else {
-            alert('Неверный логин/пароль');
+            alert('You shell not pass');
         }
     } catch (error) {
-        console.error('Произошла ошибка при авторизации:', error);
+        console.error('Error:', error);
     }
 });
